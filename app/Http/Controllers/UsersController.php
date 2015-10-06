@@ -18,9 +18,15 @@ class UsersController extends Controller
         return 'test';
     }
 
-    public function anyTestUrl()
+    public function getLogin()
     {
-        return 'this is test';
+        return view('login');
+    }
+
+
+    public function postSave()
+    {
+        return Request::all();
     }
 
     /**
