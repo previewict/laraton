@@ -12,7 +12,7 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         factory(\App\User::class)->create(array(
-            'username' => 'previewICT',
+            'name' => 'previewICT',
             'email' => 'info@miteksoftware.com',
             'password' => bcrypt('ltqpsmr7')
         ));
