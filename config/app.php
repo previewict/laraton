@@ -140,6 +140,8 @@ return [
         Illuminate\Html\HtmlServiceProvider::class,
         //for ide helper
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        //for dubugger
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -200,7 +202,9 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         //for html helper
         'Form'	=> Illuminate\Html\FormFacade::class,
-        'HTML'	=> Illuminate\Html\HtmlFacade::class
+        'HTML'	=> Illuminate\Html\HtmlFacade::class,
+        //for debugger
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
