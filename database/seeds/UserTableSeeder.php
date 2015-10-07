@@ -11,7 +11,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\User::class)->create(array(
+        factory(\laraton\User::class)->create(array(
             'name' => 'previewICT',
             'email' => 'info@miteksoftware.com',
             'password' => bcrypt('ltqpsmr7')
