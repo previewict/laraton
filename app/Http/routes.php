@@ -15,6 +15,6 @@ Route::get('/','UsersController@getLogin');
 
 Route::controller('user', 'UsersController');
 
-Route::get('home', function () {
+Route::get('home', ['middleware' => 'auth', function () {
     return view('welcome');
-});
+}]);

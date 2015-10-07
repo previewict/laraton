@@ -13,6 +13,11 @@ use Validator;
 class UsersController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('guest', ['except' => 'getLogout']);
+    }
+
     public function getLogin()
     {
         $data['menu'] = 'Login';
@@ -20,11 +25,11 @@ class UsersController extends Controller
     }
 
 
-    public function postLogin(Request $request)
+    public function postLogin()
     {
         $credentials = array(
-            'email' => $request->input('email'),
-            'password' => $request->input('password'),
+            'email' => Request::input('email'),
+            'password' => Request::input('password'),
         );
 
         if (Auth::attempt($credentials))
@@ -32,7 +37,7 @@ class UsersController extends Controller
 
         else {
             return redirect('/auth/login')
-                ->withInput($request->only('email', 'remember'))
+                ->withInput(Request::only('email', 'remember'))
                 ->withErrors([
                     $this->getFailedLoginMessage(),
                 ]);
