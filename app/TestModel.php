@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace laraton;
 
 use Illuminate\Database\Eloquent\Model;
 

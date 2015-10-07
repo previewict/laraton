@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace laraton\Events;
 
 abstract class Event
 {

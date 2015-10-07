@@ -141,10 +141,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class
+        laraton\Providers\AppServiceProvider::class,
+        laraton\Providers\AuthServiceProvider::class,
+        laraton\Providers\EventServiceProvider::class,
+        laraton\Providers\RouteServiceProvider::class
 
 
     ],

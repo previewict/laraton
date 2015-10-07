@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace laraton\Jobs;
 
 use Illuminate\Bus\Queueable;
 
