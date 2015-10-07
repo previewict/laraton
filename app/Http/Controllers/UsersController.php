@@ -2,11 +2,13 @@
 
 namespace laraton\Http\Controllers;
 
-use Illuminate\Http\Request;
 use laraton\Http\Requests;
 use laraton\Http\Controllers\Controller;
 use Auth;
 use Lang;
+use laraton\User;
+use Request;
+use Validator;
 
 class UsersController extends Controller
 {
@@ -49,6 +51,47 @@ class UsersController extends Controller
         Auth::logout();
 
         return redirect('/');
+    }
+
+    public function getRegister()
+    {
+        $data['menu'] = 'Register';
+        return view('auth.register', $data);
+    }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|max:255|unique:users',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|confirmed|min:6',
+        ]);
+    }
+
+    public function postRegister()
+    {
+        $validator = $this->validator(Request::all());
+
+        if ($validator->fails()) {
+            return redirect('/user/register')
+                ->withInput(Request::all())
+                ->withErrors([
+                    $validator->messages()->all(),
+                ]);
+        }
+
+        Auth::login($this->create(Request::all()));
+
+        return redirect('home');
+    }
+
+    protected function create(array $data)
+    {
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+        ]);
     }
 
 
