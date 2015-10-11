@@ -144,6 +144,8 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         //for log viewer
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        //laravel crud generator
+        Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
 
         /*
          * Application Service Providers...
