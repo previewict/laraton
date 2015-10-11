@@ -142,6 +142,8 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         //for dubugger
         Barryvdh\Debugbar\ServiceProvider::class,
+        //for log viewer
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
         /*
          * Application Service Providers...

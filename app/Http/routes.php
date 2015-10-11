@@ -18,3 +18,5 @@ Route::controller('user', 'UsersController');
 Route::get('home', ['middleware' => 'auth', function () {
     return view('welcome');
 }]);
+
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
